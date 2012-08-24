@@ -9,7 +9,7 @@ to customize the bar, even though it is possible, nor there are intentions to ad
 
 ## With much forkage, I ado
 
-This is a fork by ![trevorj](https://github.com/akatrevorjay) to extend the ![original](http://github.com/fmoralesc/polaris).
+This is a fork by [trevorj](https://github.com/akatrevorjay) to extend the [original](http://github.com/fmoralesc/polaris).
 Standing on the shoulders of giants, as always.
 
 Plan is to extend this much futher, to have configurable fields, plugins, etc while not being window manager specific.
