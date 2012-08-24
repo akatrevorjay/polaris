@@ -1,0 +1,7 @@
+*.pyc
+
+config/config.py
+
+polaris.komodoproject
+PYSMELLTAGS
+
