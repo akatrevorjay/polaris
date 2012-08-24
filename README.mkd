@@ -13,7 +13,7 @@ This is a fork by [trevorj](https://github.com/akatrevorjay) to extend the [orig
 Standing on the shoulders of giants, as always.
 
 Plan is to extend this much futher, to have configurable fields, plugins, etc while not being window manager specific.
-Perosonally, I use it with xmonad, but the choice is all yours. If you don't want to fiddle with haskell, check out awesome.
+Personally, I use it with xmonad, but the choice is all yours. If you don't want to fiddle with haskell, check out awesome.
 
 ## Usage
 
