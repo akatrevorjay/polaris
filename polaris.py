@@ -28,7 +28,7 @@ if not find_polaris():
 
 from polaris import PolarisManager
 from polaris.dzen import Dzen2
-from polaris.util import import_file, dict_sum
+from polaris.util import import_file, dict_sum_latter_wins
 
 
 DEFAULT_CONFIG = {
@@ -51,7 +51,7 @@ if __name__ == "__main__":
         config_file = os.path.join(config_dir, 'config.py')
         try:
             polaris_config = import_file(config_file)
-            config = dict_sum(config, getattr(polaris_config, 'config'))
+            config = dict_sum_latter_wins(config, getattr(polaris_config, 'config'))
             config['loaded'] = True
             break
         except:

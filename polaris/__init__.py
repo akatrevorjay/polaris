@@ -1,7 +1,5 @@
 #!/usr/bin/env python
 
-import sys
-import os
 import time
 from datetime import datetime
 import gobject
@@ -12,14 +10,9 @@ import unicodedata
 import dzen
 import util
 
-def fill_ro(string):
-    return string.replace("^ro", "^r")
-
 
 class PolarisManager(dbus.service.Object):
     def __init__(self, config, dzen2_pipe):
-        global pid
-
         bus_name = dbus.service.BusName('org.polaris.service', bus=dbus.SessionBus())
         dbus.service.Object.__init__(self, bus_name, '/org/polaris/service')
         import wnck
@@ -93,7 +86,7 @@ class PolarisManager(dbus.service.Object):
             ws.connect("name-changed", self.get_workspaces)
             if ws_in_use:
                 workspaces[ws_num] = ca_workspace(nbg(nfg("^p(;2)^ro(4x4)^p(;-2) " + ws.get_name() + " ")), ws_num)
-        workspaces[active_ws_num] = fill_ro(abg(afg(workspaces[active_ws_num])))
+        workspaces[active_ws_num] = util.fill_ro(abg(afg(workspaces[active_ws_num])))
         self.workspaces = " ".join([ x[1] for x in sorted(workspaces.iteritems()) ]) + "^p()"
         #self.get_windows()
         if args:
@@ -158,7 +151,7 @@ class PolarisManager(dbus.service.Object):
                 self.active_window = self.screen.get_active_window()
                 if self.active_window != None:
                     if window_full_name == self.active_window.get_name():
-                        cw_window_full_names[count] = fill_ro(abg(afg(cw_window_full_names[count])))
+                        cw_window_full_names[count] = util.fill_ro(abg(afg(cw_window_full_names[count])))
                         self.windows = "  ".join([cw_window_full_names[count]])
                 count = count + 1
                 #self.windows = "  ".join(cw_window_full_names)
